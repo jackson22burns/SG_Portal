@@ -4,6 +4,9 @@ import { toast } from "react-toastify";
 const NavBar = ({ setAuth }) => {
 
 	const [name, setName] = useState("");
+	/*const [ticket, setTicket] = useState("");
+	const [busiess, setBusiness] = useState("");
+	const [address, setAddress] = useState("");*/
 
 	const getProfile = async () => {
 		try {
@@ -11,9 +14,10 @@ const NavBar = ({ setAuth }) => {
 		    method: "GET",
 		    headers: { jwt_token: localStorage.token }
 		});
-
+		 //console.log(parseData);
 		 const parseData = await res.json();
 		  setName(parseData.user_name);
+
 		} catch (err) {
 		  console.error(err.message);
 		}
