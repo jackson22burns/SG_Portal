@@ -8,13 +8,16 @@ CREATE TABLE users(
   PRIMARY KEY(user_id)
 );
 
-/*CREATE TABLE todo(
-  todo_id SERIAL,
-  user_id UUID ,
-  description VARCHAR(255),
-  PRIMARY KEY (todo_id),
-  FOREIGN KEY (user_id) REFERENCES users(user_id)
-);*/
+ALTER TABLE users
+ADD COLUMN user_address VARCHAR(255),
+ADD COLUMN user_bus VARCHAR(255),
+ADD COLUMN ticket_num VARCHAR(255);
 
 
-INSERT INTO users (user_name, user_email, user_password) VALUES ('henry', 'henryly213@gmail.com', 'password');
+INSERT INTO users (user_address, user_bus, ticket_num)
+ VALUES ('5716 Gilesburg Ct. McAllen, TX', 'JD Catering For You', '100100100')
+ WHERE user_name = 'John Doe';
+
+UPDATE users SET user_address = '5716 Gilesburg Ct. McAllen, TX' WHERE user_name = 'John Doe';
+UPDATE users SET user_bus = 'JD Catering For You' WHERE user_name = 'John Doe';
+UPDATE users SET ticket_num = '100100100' WHERE user_name = 'John Doe';

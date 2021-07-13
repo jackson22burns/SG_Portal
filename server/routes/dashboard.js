@@ -6,7 +6,7 @@ router.get("/", authorize, async (req, res) => {
   try {
     //res.json(req.user);
     const user = await pool.query(
-      "SELECT user_name FROM users WHERE user_id = $1",
+      "SELECT user_name, user_address, user_bus, ticket_num FROM users WHERE user_id = $1",
       [req.user.id] 
     ); 
     res.json(user.rows[0]);
@@ -23,7 +23,6 @@ router.get("/", authorize, async (req, res) => {
     res.status(500).send("Server error");
   }
 });
-
 
 
 
