@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.stepper {
+.stage {
   display: flex;
   margin: 30px 0 0 0;  
   padding-left: 20px;
@@ -21,33 +21,33 @@ code {
   position: relative;
 }
 
-.stepper__item {
+.stage_item {
   flex: 100%;
   padding: 20px 20px 20px 40px;
-  background: #d3d3d3;
+  background: #DBDBDB;
+  color: #002E6D;
   margin: 0 0 0 -19px;
-  font-weight: bold;
+  font-weight: normal;
   -webkit-clip-path: polygon(20px 50%, 0% 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%);
-  
 }
 
-.stepper__item.current {
-    background: #0050d8;
+.stage_item.current {
+    background: #DBDBDB;
     font-weight: bold;
-    color: white;
-  }
+    color: #002E6D;
+}
   
-  .stepper__item.complete {
-    background: #efeeee;
-    color: #d3d3d3;
-    font-weight: normal;
-  }
+.stage_item.complete {
+  background: #DBDBDB;
+  color: #002E6D;
+  font-weight: normal;
+}
   
-  .stepper__item:first-child {
-    padding: 20px;
-    -webkit-clip-path: polygon(0% 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%);
-  }
+.stage_item:first-child {
+  padding: 20px;
+  -webkit-clip-path: polygon(0% 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%);
+}
   
-  .stepper__item:last-child {
-    -webkit-clip-path: polygon(20px 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
+.stage_item:last-child {
+  -webkit-clip-path: polygon(20px 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}

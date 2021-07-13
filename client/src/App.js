@@ -15,6 +15,8 @@ import { toast } from "react-toastify";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
+import Documents from "./components/Documents";
+import Inbox from "./components/Inbox";
 
 toast.configure();
 
@@ -82,6 +84,14 @@ function App() {
                   <Redirect to="/login" />
                 )
               }
+            />
+            <Route
+              exact path="/dashboard/documents" 
+              component={Documents}
+            />
+            <Route
+              exact path="/dashboard/inbox" 
+              component={Inbox}
             />
           </Switch>
         </div>

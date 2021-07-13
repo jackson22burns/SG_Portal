@@ -35,7 +35,7 @@ const NavBar = ({ setAuth }) => {
   };
 
 	return (
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light borderBottomWidth: 4">
 		  <div class="container-fluid">
 		  	<img 
 		  	  src= "https://www.sba.gov/build/e0e199acd15b2c54a17de6be507cf7f7.png" 
@@ -49,13 +49,13 @@ const NavBar = ({ setAuth }) => {
 			    <div class="collapse navbar-collapse" id="navbarNav">
 			      <ul class="navbar-nav">
 			        <li class="nav-item">
-			          <a class="nav-link active" aria-current="page" href="">Hi {name}</a>
+			          <a class="nav-link" aria-current="page" href="/dashboard">Hi {name}</a>
 			        </li>
 			        <li class="nav-item">
-			          <a class="nav-link" href="#">Inbox</a>
+			          <a class="nav-link" href="/dashboard/inbox">Inbox</a>
 			        </li>
 			        <li class="nav-item">
-			          <a class="nav-link" href="#">Documents</a>
+			          <a class="nav-link" href="/dashboard/documents">Documents</a>
 			        </li>
 			        <li class="nav-item">
 			          <button onClick={e => logout(e)} className="btn btn-primary">Logout</button>
