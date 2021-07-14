@@ -17,6 +17,7 @@ import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import Documents from "./components/Documents";
 import Inbox from "./components/Inbox";
+import HelpIcon from "./components/HelpIcon";
 
 toast.configure();
 
