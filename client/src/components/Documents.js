@@ -7,7 +7,10 @@ const Documents = ({ setAuth }) => {
         <div>
             <NavBar setAuth={setAuth}/>
             <Stages/>
-            <h1>Documents</h1>
+            <div class="welcomeDoc">
+                <h2>Steps to Complete</h2>
+                <hr size="4" width="30%" color="black"/>
+            </div>
         </div>
     )
 }

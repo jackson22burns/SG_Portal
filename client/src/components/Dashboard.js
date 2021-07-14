@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import Stages from "./Stages";
+import Question from "../Questions.jpg";
 
 const Dashboard = ({ setAuth }) => {
 
@@ -32,10 +33,10 @@ const Dashboard = ({ setAuth }) => {
     <div>
       <NavBar setAuth={setAuth}/>
       <Stages/>
-      <div class="welcome">
+      <div class="welcomeDash">
         <h2>Welcome to the Loan Portal</h2>
       </div>
-      <div class="container">
+      <div class="containerDash">
         <div class= "box">
           <h4>Business Profile</h4>
           <hr size="4" width="100%" color="black"/>  
@@ -54,6 +55,17 @@ const Dashboard = ({ setAuth }) => {
           <hr size="4" width="100%" color="black"/>  
           <p id="quote"> $150,000 </p>
         </div>
+      </div>
+      <div 
+        class="HelpIcon" 
+        data-html="true" 
+        data-tooltip="Questions? Phone: 1 (800) 827-5722 TTY/TDD: 1-800-877-8339 Mon–Sun, 8 a.m to 8 p.m. (ET)">
+        <img 
+          src={Question} 
+          alt="Question Mark"
+          height="50"
+          width="50"
+        />
       </div>
     </div>
   );
