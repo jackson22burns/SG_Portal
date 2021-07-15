@@ -1,6 +1,21 @@
 const router = require("express").Router();
 const authorize = require("../middleware/authorize");
+const multer = require("multer");
 const pool = require("../db");
+
+// multer middleware
+const fileStorageEngine = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, './uploads')
+  },
+  filename: (req, file, cb) => {
+      cb(null, file.originalname);
+  }
+})
+
+const upload = multer({storage: fileStorageEngine});
+
+// routes
 
 router.get("/", authorize, async (req, res) => {
   try {
@@ -10,20 +25,15 @@ router.get("/", authorize, async (req, res) => {
       [req.user.id] 
     ); 
     res.json(user.rows[0]);
-  //if would be req.user if you change your payload to this:
-    
-  //   function jwtGenerator(user_id) {
-  //   const payload = {
-  //     user: user_id
-  //   };
-    
-    //res.json(req.user);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
   }
 });
 
-
+router.post('/documents', upload.single("upload"), (req, res) => {
+  console.log(req.file);
+  res.send("Single File upload success");
+});
 
 module.exports = router;
