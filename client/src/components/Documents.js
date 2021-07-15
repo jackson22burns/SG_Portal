@@ -38,7 +38,10 @@ const Documents = ({ setAuth }) => {
                 <h2>Steps to Complete</h2>
                 <hr size="4" width="30%" color="black"/>
             </div>
-            <h1>React App File Uploading</h1>
+            <div class="welcomeDoc">
+                <h2>Document Upload</h2>
+                <hr size="4" width="30%" color="black"/>
+            </div>
             <form class="input-group mb-3" onSubmit={onSubmitHandler}>
             <input 
                 type="file" 
@@ -47,7 +50,7 @@ const Documents = ({ setAuth }) => {
                 onChange={fileChangeHandler}
             />
             <button 
-            type="submit">Submit File to Backend
+            type="submit">Upload File
             </button>
             </form>
             <HelpIcon/>

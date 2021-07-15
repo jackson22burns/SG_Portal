@@ -102,6 +102,32 @@ p {
   color: #002E6D;
 }
 
+.signInButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginTitleOne {
+  text-align: center;
+  color: #002E6D;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold
+}
+
+.LoginTitleTwo {
+  text-align: center;
+  color: #002E6D;
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: normal;
+
+}
+
+.submit {
+  text-align: center;
+}
 
 .HelpIcon {
   cursor: pointer;

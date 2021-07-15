@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
+import Header from "./Header";
 
 const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
@@ -45,6 +46,7 @@ const Register = ({ setAuth }) => {
 
   return (
     <Fragment>
+      <Header/>
       <h1 className="mt-5 text-center">Register</h1>
       <form onSubmit={onSubmitForm}>
         <input
