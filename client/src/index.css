@@ -77,6 +77,8 @@ p {
 .welcomeDoc {
   padding-top: 35px;
   padding-bottom: 10px;
+  text-decoration-line: underline;
+  font-display: ;
   color: #002E6D;
   font-family: 'Roboto';
   font-style: normal;
@@ -194,12 +196,22 @@ p {
 }
 
 .steps {
-  text-align: right;
+  display:inline-block;
+  width: 75%;
 }
 
+.btn-right {
+  float: right;
+}
+
+.text-left {
+  float:left;
+}
 .data-tooltip-inner {
   white-space: pre-wrap;
 }
+
+
 
 .btn-primary {
   background-color: #205493;

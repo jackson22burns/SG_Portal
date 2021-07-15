@@ -34,19 +34,23 @@ const Documents = ({ setAuth }) => {
 
     return(
         <div>
+            <VerifyModal/>
             <NavBar setAuth={setAuth}/>
             <Stages/>
             <div class="welcomeDoc">
                 <h2>Steps to Complete</h2>
-                <hr size="4" width="30%" color="black"/>
             </div>
             <div className="steps">
-                <VerifyModal/>
+                <p className="text-left">Verify Identity</p>
+                <button type="button" class="btn btn-primary btn-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Start
+                </button>
             </div>
+            <hr size="4" width="75%" color="black"/>
+
             <br/>
             <div class="welcomeDoc">
                 <h2>Document Upload</h2>
-                <hr size="4" width="30%" color="black"/>
             </div>
             <form class="input-group mb-3" onSubmit={onSubmitHandler}>
             <input 

@@ -49,7 +49,9 @@ const Login = ({ setAuth }) => {
     <Fragment>
       <Header/>
         <h1 className="LoginTitleOne">Sign Into Your Account</h1>
-        <h4 className="LoginTitleTwo" > Access your SBA Economic Injury Disaster Loan Portal Account to review your application and track your loan status.</h4>
+        <h4 className="LoginTitleTwo" > 
+          Access your SBA Economic Injury Disaster Loan Portal Account to review your application and track your loan status.
+        </h4>
       <form onSubmit={onSubmitForm}>
         <br/>
         <p>Email</p>
