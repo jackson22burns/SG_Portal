@@ -129,6 +129,12 @@ p {
   text-align: center;
 }
 
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .HelpIcon {
   cursor: pointer;
   border-radius: 50%;
@@ -187,8 +193,16 @@ p {
   transform: scale(1.1);
 }
 
+.steps {
+  text-align: right;
+}
+
 .data-tooltip-inner {
   white-space: pre-wrap;
+}
+
+.btn-primary {
+  background-color: #205493;
 }
 
 #red {
@@ -202,6 +216,5 @@ p {
 #quote {
   text-align: center;
 }
-
 
 

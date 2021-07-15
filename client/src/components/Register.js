@@ -47,7 +47,10 @@ const Register = ({ setAuth }) => {
   return (
     <Fragment>
       <Header/>
-      <h1 className="mt-5 text-center">Register</h1>
+      <h1 className="LoginTitleOne">Register</h1>
+      <h4 className="LoginTitleTwo" > 
+          Create your SBA Economic Injury Disaster Loan Portal Account to review your application and track your loan status.
+        </h4>
       <form onSubmit={onSubmitForm}>
         <input
           type="text"
@@ -73,9 +76,11 @@ const Register = ({ setAuth }) => {
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
-        <button className="btn btn-success btn-block">Submit</button>
+        <div className="signInButton">
+        <button className="btn btn-danger btn-block">Submit</button>
+        </div>
       </form>
-      <Link to="/login">login</Link>
+      <Link to="/login" className="link">login</Link>
     </Fragment>
   );
 };

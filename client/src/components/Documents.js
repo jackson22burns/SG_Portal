@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import NavBar from "./NavBar";
 import Stages from "./Stages";
 import HelpIcon from "./HelpIcon";
+import VerifyModal from "./VerifyModal";
 
 const Documents = ({ setAuth }) => {
     const [fileData, setFileData] = useState();
@@ -39,6 +40,10 @@ const Documents = ({ setAuth }) => {
                 <h2>Steps to Complete</h2>
                 <hr size="4" width="30%" color="black"/>
             </div>
+            <div className="steps">
+                <VerifyModal/>
+            </div>
+            <br/>
             <div class="welcomeDoc">
                 <h2>Document Upload</h2>
                 <hr size="4" width="30%" color="black"/>

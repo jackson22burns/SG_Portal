@@ -72,7 +72,7 @@ const Login = ({ setAuth }) => {
           <button  class="btn btn-danger">Sign In</button>
         </div>
       </form>
-      <Link to="/register">register</Link>
+      <Link to="/register" className="link">register</Link>
     </Fragment>
   );
 };
