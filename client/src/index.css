@@ -179,6 +179,14 @@ p {
   transform-origin: top center;
 }
 
+.subDocument {
+  transition: all .2s ease-in-out;
+}
+
+.subDocument:hover {
+  transform: scale(1.1);
+}
+
 .data-tooltip-inner {
   white-space: pre-wrap;
 }

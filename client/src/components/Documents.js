@@ -28,6 +28,7 @@ const Documents = ({ setAuth }) => {
         .catch((err) => {
             console.log(err.message);
         });
+        setFileData(null);
     };
 
     return(
@@ -46,11 +47,11 @@ const Documents = ({ setAuth }) => {
             <input 
                 type="file" 
                 class="form-control" 
-                id="inputGroupFile02"  
+                id="inputGroupFile01"  
                 onChange={fileChangeHandler}
             />
-            <button 
-            type="submit">Upload File
+            <button type="submit" className="subDocument">
+                Upload File
             </button>
             </form>
             <HelpIcon/>
