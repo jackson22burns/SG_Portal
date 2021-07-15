@@ -1,9 +1,35 @@
-import React, {Component} from "react"
+import React, {useState} from "react"
 import NavBar from "./NavBar";
 import Stages from "./Stages";
 import HelpIcon from "./HelpIcon";
 
 const Documents = ({ setAuth }) => {
+    const [fileData, setFileData] = useState();
+
+    const fileChangeHandler = (e) => {
+        setFileData(e.target.files[0]);
+    };
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+
+        // handle file data from the stat before sending
+        // sets "data" to the same data type that multer uses
+        const data = new FormData();
+        data.append('upload', fileData) // fileData comes from stat which comes from submit handler
+
+        fetch("http://localhost:5000/dashboard/documents", {
+            method:"POST",
+            body: data,
+        })
+        .then((result) => {
+            console.log("File Sent Successful");
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+    };
+
     return(
         <div>
             <NavBar setAuth={setAuth}/>
@@ -12,6 +38,18 @@ const Documents = ({ setAuth }) => {
                 <h2>Steps to Complete</h2>
                 <hr size="4" width="30%" color="black"/>
             </div>
+            <h1>React App File Uploading</h1>
+            <form class="input-group mb-3" onSubmit={onSubmitHandler}>
+            <input 
+                type="file" 
+                class="form-control" 
+                id="inputGroupFile02"  
+                onChange={fileChangeHandler}
+            />
+            <button 
+            type="submit">Submit File to Backend
+            </button>
+            </form>
             <HelpIcon/>
         </div>
     )
