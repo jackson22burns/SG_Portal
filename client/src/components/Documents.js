@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import NavBar from "./NavBar";
 import Stages from "./Stages";
 import HelpIcon from "./HelpIcon";
@@ -6,6 +6,24 @@ import VerifyModal from "./VerifyModal";
 
 const Documents = ({ setAuth }) => {
     const [fileData, setFileData] = useState();
+    const [userId, setUserId] = useState("");
+
+    const getProfile = async () => {
+          try {
+            const res = await fetch("http://localhost:5000/dashboard/", {
+              method: "GET",
+              headers: { jwt_token: localStorage.token }
+          });
+            const parseData = await res.json();
+            setUserId(parseData.user_id);
+          } catch (err) {
+            console.error(err.message);
+          }
+    };
+ 
+    useEffect(() => {
+      getProfile();
+    }, []);
 
     const fileChangeHandler = (e) => {
         setFileData(e.target.files[0]);
@@ -13,7 +31,7 @@ const Documents = ({ setAuth }) => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-
+        //const temp = JSON.stringify(userId);
         // handle file data from the stat before sending
         // sets "data" to the same data type that multer uses
         const data = new FormData();
@@ -22,6 +40,7 @@ const Documents = ({ setAuth }) => {
         fetch("http://localhost:5000/dashboard/documents", {
             method:"POST",
             body: data,
+            headers: {user_id: JSON.stringify(userId)},
         })
         .then((result) => {
             console.log("File Sent Successful");
