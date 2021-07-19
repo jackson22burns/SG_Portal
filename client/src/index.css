@@ -138,10 +138,60 @@ p {
   align-items: center;
 }
 
+/* Dropdown Button */
+.dropbtn {
+  background-color: #CC0000;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  position: fixed;
+  bottom: 60px;
+  right: 110px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #002E6D;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #9b0000;}
+
+/*
 .HelpIcon {
   cursor: pointer;
   border-radius: 50%;
-  position: fixed;
+   
   width: 50px;
   height: 50px;
   background-size: cover;
@@ -186,7 +236,7 @@ p {
   border: var(--arrow-size) solid transparent;
   border-top-color: var(--tooltip-color);
   transform-origin: top center;
-}
+}*/
 
 .subDocument {
   transition: all .2s ease-in-out;

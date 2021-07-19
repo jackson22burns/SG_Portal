@@ -3,6 +3,8 @@ import NavBar from "./NavBar";
 import Stages from "./Stages";
 import HelpIcon from "./HelpIcon";
 import VerifyModal from "./VerifyModal";
+import { Document, Page } from 'react-pdf';
+//import myFile from "../uploads/Jackson.JPG"
 
 const Documents = ({ setAuth }) => {
     const [fileData, setFileData] = useState();
@@ -91,6 +93,7 @@ const Documents = ({ setAuth }) => {
             </button>
             </form>
             <HelpIcon/>
+
         </div>
     )
 }
