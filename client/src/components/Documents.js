@@ -66,11 +66,19 @@ const Documents = ({ setAuth }) => {
                 </button>
             </div>
             <hr size="4" width="75%" color="black"/>
+            <div className="steps">
+                <p className="text-left">Electronic Disbursement</p>
+                <button type="button" class="btn btn-warning btn-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Continue
+                </button>
+            </div>
+            <hr size="4" width="75%" color="black"/>
 
             <br/>
             <div class="welcomeDoc">
                 <h2>Document Upload</h2>
             </div>
+            <p className="black">Required documents will be communicated through inbox</p>
             <form class="input-group mb-3" onSubmit={onSubmitHandler}>
             <input 
                 type="file" 

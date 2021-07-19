@@ -20,6 +20,7 @@ hr {
 
 p {
   color: #002E6D;
+  font-family: 'Roboto';
 }
 
 .stage {
@@ -202,16 +203,24 @@ p {
 
 .btn-right {
   float: right;
+  width: 200px;
+  color: white;
 }
+
 
 .text-left {
   float:left;
+  font-weight: bold;
+  color: black;
 }
+
 .data-tooltip-inner {
   white-space: pre-wrap;
 }
 
-
+.black {
+  color:black;
+}
 
 .btn-primary {
   background-color: #205493;
