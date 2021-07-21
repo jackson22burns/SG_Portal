@@ -92,6 +92,7 @@ const Documents = ({ setAuth }) => {
                 Upload File
             </button>
             </form>
+            <a href="http://localhost:5000/uploads/pdf-test.pdf">link 1</a>
             <HelpIcon/>
 
         </div>
