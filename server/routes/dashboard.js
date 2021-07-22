@@ -2,6 +2,7 @@ const router = require("express").Router();
 const authorize = require("../middleware/authorize");
 const multer = require("multer");
 const pool = require("../db");
+const model = require('../models/init-models')
 
 // multer middleware
 const fileStorageEngine = multer.diskStorage({
@@ -17,7 +18,8 @@ const upload = multer({storage: fileStorageEngine});
 
 // routes
 
-router.get("/", authorize, async (req, res) => {
+router.get("/", authorize, 
+async (req, res) => {
   try {
     //res.json(req.user);
     const user = await pool.query(
