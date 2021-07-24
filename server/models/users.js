@@ -1,55 +1,51 @@
 const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('users', {
-    user_id: {
-      type: DataTypes.UUID,
+const db = require("../config/db.config")
+module.exports = function(DataTypes) {
+  return db.define('Users', {
+    id: {
+      autoIncrement: true,
+      type: Sequelize.DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     },
+    user_id: {
+      type: Sequelize.DataTypes.UUID,
+      allowNull: true
+    },
     user_name: {
-      type: DataTypes.STRING(255),
+      type: Sequelize.DataTypes.STRING(255),
       allowNull: false
     },
     user_email: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-      unique: "users_user_email_key"
+      type: Sequelize.DataTypes.STRING(255),
+      allowNull: false
     },
     user_password: {
-      type: DataTypes.STRING(255),
+      type: Sequelize.DataTypes.STRING(255),
       allowNull: false
     },
     user_address: {
-      type: DataTypes.STRING(255),
+      type: Sequelize.DataTypes.STRING(255),
       allowNull: true
     },
     user_bus: {
-      type: DataTypes.STRING(255),
+      type: Sequelize.DataTypes.STRING(255),
       allowNull: true
     },
     ticket_num: {
-      type: DataTypes.STRING(255),
+      type: Sequelize.DataTypes.STRING(255),
       allowNull: true
     }
   }, {
-    sequelize,
-    tableName: 'users',
+    tableName: 'Users',
     schema: 'public',
-    timestamps: false,
+    timestamps: true,
     indexes: [
       {
-        name: "users_pkey",
+        name: "Users_pkey",
         unique: true,
         fields: [
-          { name: "user_id" },
-        ]
-      },
-      {
-        name: "users_user_email_key",
-        unique: true,
-        fields: [
-          { name: "user_email" },
+          { name: "id" },
         ]
       },
     ]

@@ -1,36 +1,24 @@
 const Sequelize = require('sequelize');
 const db = require("../config/db.config")
 module.exports = function(DataTypes) {
-  return db.define('Documents', {
+  return db.define('Tests', {
     id: {
       autoIncrement: true,
       type: Sequelize.DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    doc_id: {
-      type: Sequelize.DataTypes.UUID,
-      allowNull: true
-    },
-    type: {
+    test_id: {
       type: Sequelize.DataTypes.STRING(255),
-      allowNull: true
-    },
-    filename: {
-      type: Sequelize.DataTypes.STRING(255),
-      allowNull: true
-    },
-    data: {
-      type: "BYTEA",
       allowNull: true
     }
   }, {
-    tableName: 'Documents',
+    tableName: 'Tests',
     schema: 'public',
     timestamps: true,
     indexes: [
       {
-        name: "Documents_pkey",
+        name: "Tests_pkey",
         unique: true,
         fields: [
           { name: "id" },

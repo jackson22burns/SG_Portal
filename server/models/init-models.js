@@ -1,17 +1,21 @@
 var DataTypes = require("sequelize").DataTypes;
-var _documents = require("./documents");
-var _users = require("./users");
+var _Documents = require("./Documents");
+var _SequelizeMeta = require("./SequelizeMeta");
+var _Tests = require("./Tests");
+var _Users = require("./Users");
 
 function initModels(sequelize) {
-  var documents = _documents(sequelize, DataTypes);
-  var users = _users(sequelize, DataTypes);
+  var Documents = _Documents(sequelize, DataTypes);
+  var SequelizeMeta = _SequelizeMeta(sequelize, DataTypes);
+  var Tests = _Tests(sequelize, DataTypes);
+  var Users = _Users(sequelize, DataTypes);
 
-  documents.belongsTo(users, { as: "user", foreignKey: "user_id"});
-  users.hasMany(documents, { as: "documents", foreignKey: "user_id"});
 
   return {
-    documents,
-    users,
+    Documents,
+    SequelizeMeta,
+    Tests,
+    Users,
   };
 }
 module.exports = initModels;
