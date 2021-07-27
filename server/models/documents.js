@@ -8,10 +8,6 @@ module.exports = function(DataTypes) {
       allowNull: false,
       primaryKey: true
     },
-    doc_id: {
-      type: Sequelize.DataTypes.UUID,
-      allowNull: true
-    },
     type: {
       type: Sequelize.DataTypes.STRING(255),
       allowNull: true

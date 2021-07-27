@@ -1,20 +1,28 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const multer = require("multer");
+
  
 //TEST QUERY REMOVE BEFORE MERGING INTO MASTER
 const sequelize = require("./config/db.config")
 const initModels = require('./models/init-models')
 const model = initModels(sequelize)
 
-//middleware
 
+//middleware
+const upload = require("./middleware/multer.js")
 
 app.use(cors());
 app.use(express.json());
 
 //https://grokonez.com/node-js/sequelize/node-js-express-rest-api-postgresql-example-upload-file-download-file-multer-sequelize-crud
+
+
+
+
+
+
+
 
 //routes
 
@@ -27,7 +35,7 @@ app.use("/authentication", require("./routes/jwtAuth"));
 app.use("/dashboard", require("./routes/dashboard"));
 
 app.get("/test", function(req,res){
-  model.Tests.findAll().then(users =>{
+  model.Documents.findAll().then(users =>{
     res.json(users)
   }).catch(err =>{
     console.log(err)
@@ -51,16 +59,12 @@ app.get("/test", function(req,res){
 
 */
 
-app.post("/fileUpload", function(req,res){
-    model.documents.create({
-      //pass in reqs
-    }).then(() => {
-      res.json({msg:"File uploaded succesfully: " + req.document.filename})
-    }).catch(err=>{
-      console.log(err)
-      res.json({msg: "Error in uploading file: " + err})
-    })
-})
+//define const for documentHandler
+
+const doucmentHandler = require("./handlers/document.js");
+
+
+app.post("/upload", upload.any(), doucmentHandler.uploadFile)
 
 
 app.listen(5000, () => {
