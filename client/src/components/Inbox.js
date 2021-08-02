@@ -1,7 +1,8 @@
-import React, {Component} from "react"
+import React from "react";
 import NavBar from "./NavBar";
 import Stages from "./Stages";
 import HelpIcon from "./HelpIcon";
+
 
 const Inbox = ({ setAuth }) => {
     return(
@@ -9,6 +10,7 @@ const Inbox = ({ setAuth }) => {
             <NavBar setAuth={setAuth}/>
             <Stages/>
             <h1>Inbox</h1>
+
             <HelpIcon/>
         </div>
     )

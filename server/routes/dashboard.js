@@ -1,11 +1,13 @@
 const router = require("express").Router();
 const authorize = require("../middleware/authorize");
 const multer = require("multer");
+const getStream = require('get-stream')
 const pool = require("../db");
 
 // multer middleware
 const fileStorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
+      //cb(null, '../client/src/uploads')
       cb(null, './uploads')
   },
   filename: (req, file, cb) => {
@@ -27,15 +29,21 @@ router.get("/", authorize, async (req, res) => {
     res.json(user.rows[0]);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server error");
+    res.status(500).send("Server error"); 
   }
 });
 
-router.post('/documents', upload.single("upload"), (req, res) => {
+router.post('/documents', upload.single("upload"), async (req, res) => {
   const { user_id } = req.headers;
   const u_id = user_id.replace(/['"]+/g, ''); //need to get rid of double quotes in order to add to DB
   const path = req.file.path;
-  
+
+  //const blobName = getBlobName(req.file.originalname)
+  const stream = getStream.buffer(req.file.buffer)
+  console.log('stream:', stream) // ok
+  console.log('path:', path) // ok
+  //const buffer = await getStream(req.file.stream)
+  //console.log('buffer:', buffer)
   //insert document path into Postgres
   pool.query(
     "INSERT INTO documents (user_id, doc_path) VALUES ($1, $2) RETURNING *",

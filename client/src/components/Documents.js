@@ -3,12 +3,13 @@ import NavBar from "./NavBar";
 import Stages from "./Stages";
 import HelpIcon from "./HelpIcon";
 import VerifyModal from "./VerifyModal";
-import { Document, Page } from 'react-pdf';
-//import myFile from "../uploads/Jackson.JPG"
+import DocHistory from "./DocHistory";
 
 const Documents = ({ setAuth }) => {
     const [fileData, setFileData] = useState();
     const [userId, setUserId] = useState("");
+
+
 
     const getProfile = async () => {
           try {
@@ -52,7 +53,7 @@ const Documents = ({ setAuth }) => {
         });
         setFileData(null);
     };
-
+        
     return(
         <div>
             <VerifyModal/>
@@ -92,7 +93,16 @@ const Documents = ({ setAuth }) => {
                 Upload File
             </button>
             </form>
-            <a href="http://localhost:5000/uploads/pdf-test.pdf">link 1</a>
+            <DocHistory/>
+        
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            
+            
+
             <HelpIcon/>
 
         </div>

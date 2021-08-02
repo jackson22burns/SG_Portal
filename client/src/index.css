@@ -23,6 +23,22 @@ p {
   font-family: 'Roboto';
 }
 
+h6 {
+  color: black;
+}
+
+
+.link {     
+  text-decoration-color: blue; 
+  cursor: pointer;
+  float: left;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+
 .stage {
   display: flex;
   margin: 30px 0 0 0;  
@@ -93,6 +109,23 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
   grid-gap: 20px;
+}
+
+.containerDoc {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+  grid-gap: 20px;
+
+}
+.boxDoc{
+  height:20px;
+  position: relative;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  color: #002E6D;
 }
 
 .box{
@@ -187,56 +220,7 @@ p {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #9b0000;}
 
-/*
-.HelpIcon {
-  cursor: pointer;
-  border-radius: 50%;
-   
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  right: 100px; 
-  bottom: 40px;
-}
-.HelpIcon::before,
-.HelpIcon::after{
-  --scale: 0;
-  --arrow-size: 20px;
-  --tooltip-color: rgb(219, 219, 219);
 
-  position: absolute;
-  top: -.25rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
-  transition: 150ms transform;
-  transform-origin: bottom center;
-}
-
-.HelpIcon::before {
-  --translate-y: calc(-100% - var(--arrow-size));
-
-  content: attr(data-tooltip);
-  color: black;
-  padding: .5rem;
-  border-radius: .3rem;
-  text-align: center;
-  width: max-content;
-  background: var(--tooltip-color);
-}
-
-.HelpIcon:hover::before,
-.HelpIcon:hover::after {
-  --scale: 1;
-}
-
-.HelpIcon::after {
-  --translate-y: calc(-1 * var(--arrow-size));
-
-  content: '';
-  border: var(--arrow-size) solid transparent;
-  border-top-color: var(--tooltip-color);
-  transform-origin: top center;
-}*/
 
 .subDocument {
   transition: all .2s ease-in-out;
@@ -249,6 +233,10 @@ p {
 .steps {
   display:inline-block;
   width: 75%;
+}
+
+.documents {
+  display:inline-block;
 }
 
 .btn-right {

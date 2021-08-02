@@ -5,6 +5,7 @@ import HelpIcon from "./HelpIcon";
 
 const Dashboard = ({ setAuth }) => {
 
+  //using axios you can clash this into on request
 	const [ticket, setTicket] = useState("");
 	const [business, setBusiness] = useState("");
 	const [address, setAddress] = useState("");
@@ -47,8 +48,8 @@ const Dashboard = ({ setAuth }) => {
         <div class= "box">
           <h4>Status</h4>
           <hr size="4" width="100%" color="black"/>
-          <p>You are in x stage. Estimated time until next stage: </p>
-          <p>Review steps to complete and messages in inbox as soon as possible to avoid delays.</p>  
+          <p>You are in the Processing stage.  </p>
+          <p>Please review steps to complete and check for messages in inbox as soon as possible to avoid delays.</p>  
         </div>
         <div class= "box">
           <h4>Your Quote</h4>
