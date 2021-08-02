@@ -82,7 +82,7 @@ const Documents = ({ setAuth }) => {
                 <h2>Document Upload</h2>
             </div>
             <p className="black">Required documents will be communicated through inbox</p>
-            <form class="input-group mb-3" onSubmit={onSubmitHandler}>
+            <form class="input-group mb-3 docs" onSubmit={onSubmitHandler}>
             <input 
                 type="file" 
                 class="form-control" 

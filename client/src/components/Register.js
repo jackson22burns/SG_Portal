@@ -46,41 +46,43 @@ const Register = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <Header/>
-      <h1 className="LoginTitleOne">Register</h1>
-      <h4 className="LoginTitleTwo" > 
-          Create your SBA Economic Injury Disaster Loan Portal Account to review your application and track your loan status.
-        </h4>
-      <form onSubmit={onSubmitForm}>
-        <input
-          type="text"
-          name="email"
-          value={email}
-          placeholder="email"
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          placeholder="password"
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <input
-          type="text"
-          name="name"
-          value={name}
-          placeholder="name"
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <div className="signInButton">
-        <button className="btn btn-danger btn-block">Submit</button>
-        </div>
-      </form>
-      <Link to="/login" className="link">login</Link>
+      <div className="loginScreen">
+        <Header/>
+        <h1 className="LoginTitleOne">Register</h1>
+        <h4 className="LoginTitleTwo" > 
+            Create your SBA Economic Injury Disaster Loan Portal Account to review your application and track your loan status.
+          </h4>
+        <form onSubmit={onSubmitForm}>
+          <input
+            type="text"
+            name="email"
+            value={email}
+            placeholder="email"
+            onChange={e => onChange(e)}
+            className="form-control my-3"
+          />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            placeholder="password"
+            onChange={e => onChange(e)}
+            className="form-control my-3"
+          />
+          <input
+            type="text"
+            name="name"
+            value={name}
+            placeholder="name"
+            onChange={e => onChange(e)}
+            className="form-control my-3"
+          />
+          <div className="signInButton">
+          <button className="btn btn-danger btn-block">Submit</button>
+          </div>
+        </form>
+        <Link to="/login" className="link">login</Link>
+      </div>
     </Fragment>
   );
 };

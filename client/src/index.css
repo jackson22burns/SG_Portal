@@ -104,6 +104,16 @@ h6 {
   line-height: 22px;
 }
 
+.red {
+  color: #CC0000;
+  font-weight: bold;
+}
+
+.blue {
+  color: #002E6D;
+  font-weight: bold;
+}
+
 .question {
   color: #CC0000;
   position: fixed;
@@ -274,6 +284,27 @@ h6 {
 .btn-primary {
   background-color: #205493;
 }
+.loginScreen {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.docs {
+  width:75%;
+}
+
+.nav1 {
+  margin: 0px 50px 0px 50px;
+}
+.nav3 {
+  margin: 0px 50px 0px 50px;
+}
+.nav2 {
+  margin: 0px 50px 0px 50px;
+}
+
+
 
 #red {
   color: #CC0000;

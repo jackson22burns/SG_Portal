@@ -53,13 +53,13 @@ const NavBar = ({ setAuth }) => {
 			    <div class="collapse navbar-collapse" id="navbarNav">
 			      <ul class="navbar-nav">
 			        <li class="nav-item">
-			          <a class="nav-link" aria-current="page" href="/dashboard">Hi {name}</a>
+			          <a class="nav-link nav1" aria-current="page" href="/dashboard"><p className="blue">Hi {name}</p></a>
+			        </li>
+					<li class="nav-item">
+			          <a class="nav-link nav 2" href="/dashboard/documents"><p className="red">Documents</p></a>
 			        </li>
 			        <li class="nav-item">
-			          <a class="nav-link" href="/dashboard/inbox">Inbox</a>
-			        </li>
-			        <li class="nav-item">
-			          <a class="nav-link" href="/dashboard/documents">Documents</a>
+			          <a class="nav-link nav3" href="/dashboard/inbox"><p className="blue">Inbox</p></a>
 			        </li>
 			        <li class="nav-item">
 			          <button onClick={e => logout(e)} className="btn btn-primary">Logout</button>
@@ -73,3 +73,5 @@ const NavBar = ({ setAuth }) => {
 }
 
 export default NavBar;
+
+

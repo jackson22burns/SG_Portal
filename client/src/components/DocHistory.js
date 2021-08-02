@@ -3,7 +3,7 @@ import React, {} from "react"
 
 const VerifyModal = () => {
     return(
-        <div>
+        <div className="docs">
             <br/>
             <div class="containerDoc">
                 <div class= "boxDoc">

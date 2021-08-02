@@ -47,34 +47,36 @@ const Login = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <Header/>
+      <div className="loginScreen">
+        <Header/>
         <h1 className="LoginTitleOne">Sign Into Your Account</h1>
         <h4 className="LoginTitleTwo" > 
           Access your SBA Economic Injury Disaster Loan Portal Account to review your application and track your loan status.
         </h4>
-      <form onSubmit={onSubmitForm}>
-        <br/>
-        <p>Email</p>
-        <input
-          type="text"
-          name="email"
-          value={email}
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <p>Password</p>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <div className="signInButton">
-          <button  class="btn btn-danger">Sign In</button>
-        </div>
-      </form>
-      <Link to="/register" className="link">register</Link>
+        <form onSubmit={onSubmitForm}>
+          <br/>
+          <p>Email</p>
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={e => onChange(e)}
+            className="form-control my-3"
+          />
+          <p>Password</p>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={e => onChange(e)}
+            className="form-control my-3"
+          />
+          <div className="signInButton">
+            <button  class="btn btn-danger">Sign In</button>
+          </div>
+        </form>
+        <Link to="/register" className="link">register</Link>
+      </div>
     </Fragment>
   );
 };
