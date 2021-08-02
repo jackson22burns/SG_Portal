@@ -3,7 +3,9 @@ import React from "react";
 const HelpIcon = () => {
   return (
     <div class="dropdown">
-      <button class="dropbtn"> ? </button>
+      <button class="dropbtn"> 
+      <i class="fas fa-question question"></i>
+      </button>
       <div class="dropdown-content">
         <a href="#">&#128222;  1 (800) 827-5722</a>
         <a href="#"> <i class="fa fa-tty" aria-hidden="true"></i>   1 (800) 877-8339</a>

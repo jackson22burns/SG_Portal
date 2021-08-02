@@ -95,13 +95,20 @@ h6 {
   padding-top: 35px;
   padding-bottom: 10px;
   text-decoration-line: underline;
-  font-display: ;
+
   color: #002E6D;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
   font-size: 70px;
   line-height: 22px;
+}
+
+.question {
+  color: #CC0000;
+  position: fixed;
+  bottom: 61px;
+  right: 109px;
 }
 
 .containerDash {
@@ -173,14 +180,18 @@ h6 {
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #CC0000;
+  background-color: #f8f8f8;
   color: white;
   padding: 16px;
   font-size: 16px;
-  border: none;
+  border-color: #002E6D;
+  box-shadow: 10px 10px 5px grey;
+  width:50px;
+  height:50px;
   position: fixed;
-  bottom: 60px;
-  right: 110px;
+  bottom: 45px;
+  right: 90px;
+  border-radius: 50%;
 }
 
 /* The container <div> - needed to position the dropdown content */
